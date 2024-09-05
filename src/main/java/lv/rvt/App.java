@@ -7,21 +7,15 @@ public class App
     public static void main( String[] args )
     {
 
-        Scanner scanner = new Scanner(System.in);
+        int chicken = 3;
+        double bacon = 5.5;
+        String text = "None!";
 
-        System.out.println("Kā Jūs sauc: ");
+        System.out.println("And finnaly, a summary: ");
+        System.out.println(chicken);
+        System.out.println(bacon);
+        System.out.println(text);
 
-        String name = scanner.nextLine();
-
-        System.out.println("Kāds ir Jūsu uzvārds: ");
-
-        String surname = scanner.nextLine();
-
-        System.out.println("Kāda Jums ir grupa: ");
-
-        String group = scanner.nextLine();
-
-        System.out.println(name + ' ' + surname + ' ' + group);
 
     }
 
