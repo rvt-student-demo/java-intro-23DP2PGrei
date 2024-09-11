@@ -1,20 +1,28 @@
 package lv.rvt;
 
+import java.util.*;
+
 import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
+        Scanner scanner = new Scanner(System.in);
 
-        int chicken = 3;
-        double bacon = 5.5;
-        String text = "None!";
+        System.out.println("Ievadi savu vārdu: ");
 
-        System.out.println("And finnaly, a summary: ");
-        System.out.println(chicken);
-        System.out.println(bacon);
-        System.out.println(text);
+        String name = scanner.nextLine();
+
+        System.out.println("Ievadi savu uzvārdu: ");
+
+        String surname = scanner.nextLine();
+
+        System.out.println("Ievadi savu grupu: ");
+
+        String group = scanner.nextLine();
+
+        System.out.println(name + ' ' + surname + ' ' + group);
 
 
     }
