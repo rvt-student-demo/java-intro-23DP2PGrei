@@ -21,7 +21,7 @@ public class App
         int result1 = first + second;
         int result2 = first - second;
         int result3 = first * second;
-        int result4 = first / second;
+        float result4 = first / second;
 
         System.out.println(first + " + " + second + " = " + result1);
 
