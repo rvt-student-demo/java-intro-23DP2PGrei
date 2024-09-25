@@ -10,22 +10,23 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        while (true){
+        int count = 0;
+        int sum = 0;
+
+        while (true) {
     
             System.out.println("Give a number: ");
             int number = Integer.valueOf(scanner.nextLine());
 
             if (number == 0) {
+                System.out.println("Number of numbers: " + count);
+                System.out.println("Sum of the numbers: " + sum);
                 break;
             }
-    
-            else if (number > 0) {
-                System.out.println(number * number);
-            }
 
-            else if (number < 0) {
-                System.out.println("Unsuitable number");
+            count = count + 1;
+            sum = sum + number;
+
             }
         }
     }
-}
