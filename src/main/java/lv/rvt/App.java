@@ -10,23 +10,15 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        int count = 0;
-        int sum = 0;
+        System.out.println("Give a number: ");
+        int number = Integer.valueOf(scanner.nextLine());
 
-        while (true) {
-    
-            System.out.println("Give a number: ");
-            int number = Integer.valueOf(scanner.nextLine());
+        int end = 101;
 
-            if (number == 0) {
-                System.out.println("Number of numbers: " + count);
-                System.out.println("Sum of the numbers: " + sum);
-                break;
-            }
 
-            count = count + 1;
-            sum = sum + number;
-
-            }
+        for(int i = number; i < end; i++){
+            System.out.println(i);
         }
-    }
+
+            }
+}
