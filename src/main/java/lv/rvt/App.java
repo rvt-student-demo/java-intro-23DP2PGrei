@@ -11,14 +11,34 @@ public class App
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Give a number: ");
-        int number = Integer.valueOf(scanner.nextLine());
-
-        int fac = 1;  
-        for(int i=1; i <= number; i++) {
-            fac *= i;
-        }
-        System.err.println(fac);
-        }
-
+        int sum = 0;
+        int count = 0;
+        double avg = 0;
+        int even = 0;
+        int odd = 0;
+        while(true) {
+            int number = Integer.valueOf(scanner.nextLine());
+            if (number == -1) {
+                System.out.println("Thx! Bye!");
+                System.out.println("Sum: " + sum);
+                System.out.println("Numbers: " + count);
+                System.out.println("Average: " + avg);
+                System.out.println("Even: " + even);
+                System.out.println("Odd: " + odd);
+                break;
             }
+            sum = sum + number;
+            count = count + 1;
+            avg = (double)sum / count;
+            if(number % 2 == 0) {
+                even = even + 1;
+            }
+            else {
+                odd = odd + 1;
+            }
+
+        }
+
+    }
+}
 
