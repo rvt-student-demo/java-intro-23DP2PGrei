@@ -13,12 +13,12 @@ public class App
         System.out.println("Give a number: ");
         int number = Integer.valueOf(scanner.nextLine());
 
-        int end = 101;
-
-
-        for(int i = number; i < end; i++){
-            System.out.println(i);
+        int fac = 1;  
+        for(int i=1; i <= number; i++) {
+            fac *= i;
+        }
+        System.err.println(fac);
         }
 
             }
-}
+
