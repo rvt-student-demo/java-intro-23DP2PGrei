@@ -38,4 +38,7 @@ public static void printStar(int count){
         System.out.print("*");
     }
 }
+public static void printTree(int size){
+    
+}
 }
