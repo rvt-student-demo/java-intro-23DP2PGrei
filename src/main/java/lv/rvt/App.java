@@ -1,42 +1,26 @@
 package lv.rvt;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class App {
-    public static void main(String[] args) throws Exception {
-        ArrayList<Person> persons = new ArrayList<>();
+    public static void main(String[] args) {
+        PaymentTerminal unicafeExactum = new PaymentTerminal();
+        System.out.println(unicafeExactum);
 
-        System.out.println("Current directory: " + System.getProperty("user.dir"));
+        PaymentCard annesCard = new PaymentCard(2);
 
-        try (BufferedReader br = new BufferedReader(new FileReader("/workspaces/java-intro-23DP2PGrei/src/main/resources/persons.csv"))) {
-        String line;
-        br.readLine(); // Skip header line
+        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
 
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            String name = data[0].trim();
-            int age = Integer.parseInt(data[1].trim());
-            double weight = Double.parseDouble(data[2].trim());
-            double height = Double.parseDouble(data[3].trim());
+        boolean wasSuccessful = unicafeExactum.eatHeartily(annesCard);
+        System.out.println("there was enough money: " + wasSuccessful);
 
-            persons.add(new Person(name, age, height, weight));
-        }
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
-        }
+        unicafeExactum.addMoneyToCard(annesCard, 100);
 
-        for (Person person : persons) {
-            System.out.println(person);
-        }
+        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
+        System.out.println("there was enough money: " + wasSuccessful);
 
-        double totalAge = 0;
-        for (Person person : persons) {
-            totalAge += person.getAge();
-        }
-        double averageAge = persons.isEmpty() ? 0 : totalAge / persons.size();
-        System.out.println("Average age: " + averageAge);
+        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
+
+        System.out.println(unicafeExactum);
     }
 }
+
+    
